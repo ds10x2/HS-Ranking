@@ -7,40 +7,43 @@ import jakarta.persistence.*;
 @Table(name = "ranking")
 public class UserEntity {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "usernum")
-    private Integer userNum;
-
     @Column(name = "id")
-    private String id;
+    private Integer id;
 
 
-    @Column(name="ranking")
-    private Long ranking;
+    @Column(name = "user_id")
+    private String user_id;
 
 
-    public Integer getUserNum() {
-        return userNum;
-    }
+    @Column(name="rank")
+    private Long rank;
 
-    public void setUserNum(Integer userNum) {
-        this.userNum = userNum;
-    }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+
     public Long getRanking() {
-        return ranking;
+        return rank;
     }
 
     public void setRanking(Long ranking) {
-        this.ranking = ranking;
+        this.rank = rank;
     }
 }

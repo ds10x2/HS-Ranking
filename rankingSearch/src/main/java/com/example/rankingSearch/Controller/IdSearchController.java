@@ -24,21 +24,20 @@ public class IdSearchController {
 
     @RequestMapping("/")
     public String index(Model model){
-        model.addAttribute("msg", "input your id.");
-        return "index";
+
+        return "main_page";
     }
 
     @RequestMapping(value="/", method= RequestMethod.POST)
-    public String send(@RequestParam("id1")String id, Model model){
+    public String send(@RequestParam("input_id")String id, Model model){
 
-        String queryString = "SELECT ranking FROM ranking WHERE id = :userId";
+        String queryString = "SELECT rank FROM ranking WHERE user_id = :userId";
         Query query = entityManager.createNativeQuery(queryString);
         query.setParameter("userId", id);
         Object ranking = query.getSingleResult();
 
         model.addAttribute("msg", "Hi " + id + "!" + " User Ranking is " + ranking + ".");
-        model.addAttribute("id2", id);
         System.out.print(id);
-        return "index";
+        return "main_page";
     }
 }

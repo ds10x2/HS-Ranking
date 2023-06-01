@@ -1,0 +1,40 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 4px;
+    padding-right: 150px;
+}
+
+.search-box input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
