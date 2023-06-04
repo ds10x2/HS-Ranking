@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "ranking")
+@Table(name = "userid")
 public class UserEntity {
 
 
@@ -18,7 +18,7 @@ public class UserEntity {
     private String user_id;
 
 
-    @Column(name="rank")
+    @Column(name="ranking")
     private Long rank;
 
 

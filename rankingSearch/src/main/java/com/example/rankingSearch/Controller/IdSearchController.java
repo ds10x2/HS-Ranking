@@ -31,12 +31,13 @@ public class IdSearchController {
     @RequestMapping(value="/", method= RequestMethod.POST)
     public String send(@RequestParam("input_id")String id, Model model){
 
-        String queryString = "SELECT rank FROM ranking WHERE user_id = :userId";
+        String queryString = "SELECT ranking FROM userid WHERE user_id = :userId";
         Query query = entityManager.createNativeQuery(queryString);
         query.setParameter("userId", id);
         Object ranking = query.getSingleResult();
 
-        model.addAttribute("msg", "Hi " + id + "!" + " User Ranking is " + ranking + ".");
+        //model.addAttribute("msg", "Hi " + id + "!" + " User Ranking is " + ranking + ".");
+        model.addAttribute("msg",id + "님의 현재 순위는 " + ranking + "위 입니다.");
         System.out.print(id);
         return "main_page";
     }
